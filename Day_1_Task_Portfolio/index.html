@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devipriya Portfolio</title>
+    <style>
+        /* ===== General Styles ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f6fa; /* Soft background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2c80b4;
+        }
+
+        /* ===== Header ===== */
+        header {
+            background: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            background: #fff;
+            margin: 30px auto;
+            padding: 30px 20px;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        /* ===== About Me ===== */
+        .section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px auto;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section p {
+            text-align: center;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== Lists ===== */
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Contact Links ===== */
+        .section p a {
+            font-weight: 500;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Header ===== -->
+    <header>
+        <h1>Devipriya K</h1>
+        <p>AI & ML Student | Developer | Tech Enthusiast</p>
+    </header>
+
+    <!-- ===== About Me ===== -->
+    <div class="section">
+        <h2>About Me</h2>
+        <img src="Photo_NPTEL.jpg" alt="My Photo">
+        <p>Hello! I am an engineering student passionate about technology, programming, 
+           and building meaningful projects. I love learning new tools and solving problems.</p>
+    </div>
+
+    <!-- ===== Skills ===== -->
+    <div class="section">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Machine Learning</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>SQL & Databases</li>
+        </ul>
+    </div>
+
+    <!-- ===== Projects ===== -->
+    <div class="section">
+        <h2>Projects</h2>
+        <ul>
+            <li><b>AI Recipe Generator</b> - A Streamlit app that generates recipes using AI.</li>
+            <li><b>Spam Email Detector</b> - ML project using Naive Bayes.</li>
+            <li><b>Portfolio Website</b> - The site you're viewing now!</li>
+        </ul>
+    </div>
+
+    <!-- ===== Contact ===== -->
+    <div class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:devipriya@gmail.com">devipriya@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/devipriya-k-8ba849333" target="_blank">Profile</a></p>
+        <p>GitHub: <a href="https://www.github.com/DevipriyaK" target="_blank">GitHub Link</a></p>
+    </div>
+
+</body>
+</html>

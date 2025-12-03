@@ -1,0 +1,137 @@
+/* ===== General Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0); /* pastel background */
+    overflow: hidden;
+}
+
+/* ===== Home Page Styles ===== */
+.home-container {
+    text-align: center;
+    color: #333;
+    padding: 50px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.home-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #4b6584;
+}
+
+.home-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #34495e;
+}
+
+/* Login button */
+.login-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #89f7fe, #66a6ff);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(102, 166, 255, 0.4);
+    transition: all 0.4s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(102, 166, 255, 0.6);
+}
+
+/* ===== Login Page Styles ===== */
+.login-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 60px 50px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    text-align: center;
+    color: #333;
+    min-width: 320px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.login-container h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #4b6584;
+}
+
+.login-container input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin: 12px 0;
+    border: 1px solid #d1d8e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #66a6ff;
+    box-shadow: 0 0 10px rgba(102, 166, 255, 0.3);
+    outline: none;
+}
+
+.login-container button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #89f7fe, #66a6ff);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.login-container button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(102, 166, 255, 0.5);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInLogin {
+    from { opacity: 0; transform: scale(0.9);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+/* Fade-in effects */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.fade-in.delay {
+    animation-delay: 0.8s;
+}
+
+.fade-in-login {
+    opacity: 0;
+    animation: fadeInLogin 1s forwards;
+}

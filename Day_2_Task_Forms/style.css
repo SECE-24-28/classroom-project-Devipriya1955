@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    animation: fadeBg 1.5s ease-in-out;
+}
+
+/* Background fade */
+@keyframes fadeBg {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Card Wrapper */
+.card {
+    width: 380px;
+    background: #ffffffdd;
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 30px rgba(0,0,0,0.15);
+    transform: scale(0.9);
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: scale(1);
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+/* Inputs animation */
+.input-anim {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.input-anim:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px #9d72f7;
+    transform: scale(1.02);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: #6a11cb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.4s ease;
+}
+
+.btn.slide:hover {
+    background: #4b0f9b;
+    letter-spacing: 1px;
+    transform: translateY(-3px);
+}
