@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+
+            background-image: url("https://images.unsplash.com/photo-1427504494785-3a9ca7044f45");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            width: 450px;
+            background: rgba(255, 255, 255, 0.9);  
+            padding: 25px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00000055;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: -12px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4b7bec;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3867d6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Exam Registration Form</h2>
+
+    <form id="examForm" onsubmit="return validateForm()">
+
+        <label>Full Name</label>
+        <input type="text" id="name">
+        <div class="error" id="nameError"></div>
+
+        <label>Email</label>
+        <input type="text" id="email">
+        <div class="error" id="emailError"></div>
+
+        <label>Phone Number</label>
+        <input type="text" id="phone">
+        <div class="error" id="phoneError"></div>
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
+        <div class="error" id="dobError"></div>
+
+        <label>Select Course</label>
+        <select id="course">
+            <option value="">-- Select Course --</option>
+            <option>Computer Science</option>
+            <option>Mechanical Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Civil Engineering</option>
+        </select>
+        <div class="error" id="courseError"></div>
+
+        <label>Exam Center</label>
+        <select id="center">
+            <option value="">-- Select Center --</option>
+            <option>Chennai</option>
+            <option>Coimbatore</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+        </select>
+        <div class="error" id="centerError"></div>
+
+        <label>Password</label>
+        <input type="password" id="password">
+        <div class="error" id="passwordError"></div>
+
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword">
+        <div class="error" id="confirmPasswordError"></div>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    let valid = true;
+
+    document.querySelectorAll(".error").forEach(e => e.innerHTML = "");
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let dob = document.getElementById("dob").value;
+    let course = document.getElementById("course").value;
+    let center = document.getElementById("center").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!/^[A-Za-z ]+$/.test(name)) {
+        document.getElementById("nameError").innerHTML = "Name must contain only letters.";
+        valid = false;
+    }
+
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        document.getElementById("emailError").innerHTML = "Enter a valid email.";
+        valid = false;
+    }
+
+    if (!/^[0-9]{10}$/.test(phone)) {
+        document.getElementById("phoneError").innerHTML = "Phone must be 10 digits.";
+        valid = false;
+    }
+
+    let today = new Date().toISOString().split("T")[0];
+    if (dob === "" || dob > today) {
+        document.getElementById("dobError").innerHTML = "Enter a valid date of birth.";
+        valid = false;
+    }
+
+    if (course === "") {
+        document.getElementById("courseError").innerHTML = "Please select a course.";
+        valid = false;
+    }
+
+    if (center === "") {
+        document.getElementById("centerError").innerHTML = "Please select an exam center.";
+        valid = false;
+    }
+
+    if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters.";
+        valid = false;
+    }
+
+    if (password !== confirmPassword) {
+        document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match.";
+        valid = false;
+    }
+
+    if (valid) {
+        alert("Registration Successful!");
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Series - The Wizarding World</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --gryffindor: #740001;
+            --slytherin: #1a472a;
+            --hufflepuff: #ecb939;
+            --ravenclaw: #0e1a40;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Garamond', serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--gryffindor), #5a0001) !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold) !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23740001" width="1200" height="600"/><path fill="%23500000" d="M0 300L50 320L100 310L150 330L200 315L250 335L300 320L350 340L400 325L450 345L500 330L550 350L600 335L650 355L700 340L750 360L800 345L850 365L900 350L950 370L1000 355L1050 375L1100 360L1150 380L1200 365V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin: 50px 0 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .book-card {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .book-title {
+            color: var(--gold);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .house-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 15px 0;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 3px solid;
+        }
+
+        .house-card:hover {
+            transform: scale(1.05);
+        }
+
+        .gryffindor-card {
+            border-color: var(--gryffindor);
+        }
+
+        .slytherin-card {
+            border-color: var(--slytherin);
+        }
+
+        .hufflepuff-card {
+            border-color: var(--hufflepuff);
+        }
+
+        .ravenclaw-card {
+            border-color: var(--ravenclaw);
+        }
+
+        .house-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .house-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .character-card {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 15px 0;
+            border: 2px solid var(--gold);
+        }
+
+        .character-initial {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gryffindor);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a, var(--gryffindor));
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .btn-magic {
+            background: var(--gryffindor);
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 10px 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-magic:hover {
+            background: var(--gold);
+            color: var(--gryffindor);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">⚡ Harry Potter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#houses">Houses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#characters">Characters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">The Wizarding World</h1>
+            <p class="hero-subtitle">Enter the magical world of Harry Potter</p>
+            <button class="btn btn-magic mt-4">Explore the Magic</button>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="container">
+        <h2 class="section-title">The Seven Books</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="book-card">
+                    <h3 class="book-title">1. Philosopher's Stone</h3>
+                    <p class="text-muted">Published: 1997</p>
+                    <p>Harry discovers he's a wizard and begins his journey at Hogwarts School of Witchcraft and Wizardry.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="book-card">
+                    <h3 class="book-title">2. Chamber of Secrets</h3>
+                    <p class="text-muted">Published: 1998</p>
+                    <p>A mysterious chamber is opened, unleashing a deadly creature upon the students of Hogwarts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="book-card">
+                    <h3 class="book-title">3. Prisoner of Azkaban</h3>
+                    <p class="text-muted">Published: 1999</p>
+                    <p>An escaped prisoner threatens Harry's life, leading to revelations about his past.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="book-card">
+                    <h3 class="book-title">4. Goblet of Fire</h3>
+                    <p class="text-muted">Published: 2000</p>
+                    <p>Harry is mysteriously entered into the dangerous Triwizard Tournament.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="book-card">
+                    <h3 class="book-title">5. Order of the Phoenix</h3>
+                    <p class="text-muted">Published: 2003</p>
+                    <p>Harry and his friends form a secret organization to fight against dark forces.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="book-card">
+                    <h3 class="book-title">6. Half-Blood Prince</h3>
+                    <p class="text-muted">Published: 2005</p>
+                    <p>Harry learns about Voldemort's past and the key to defeating him.</p>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mx-auto">
+                <div class="book-card">
+                    <h3 class="book-title">7. Deathly Hallows</h3>
+                    <p class="text-muted">Published: 2007</p>
+                    <p>The epic conclusion as Harry faces Voldemort in the final battle between good and evil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Houses Section -->
+    <section id="houses" class="container">
+        <h2 class="section-title">The Four Houses</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="house-card gryffindor-card">
+                    <div class="house-icon">🦁</div>
+                    <h3 class="house-name" style="color: var(--gryffindor)">Gryffindor</h3>
+                    <p><strong>Traits:</strong> Courage, Bravery, Determination</p>
+                    <p><strong>Founder:</strong> Godric Gryffindor</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="house-card slytherin-card">
+                    <div class="house-icon">🐍</div>
+                    <h3 class="house-name" style="color: var(--slytherin)">Slytherin</h3>
+                    <p><strong>Traits:</strong> Ambition, Cunning, Leadership</p>
+                    <p><strong>Founder:</strong> Salazar Slytherin</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="house-card hufflepuff-card">
+                    <div class="house-icon">🦡</div>
+                    <h3 class="house-name" style="color: var(--hufflepuff)">Hufflepuff</h3>
+                    <p><strong>Traits:</strong> Loyalty, Patience, Hard Work</p>
+                    <p><strong>Founder:</strong> Helga Hufflepuff</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="house-card ravenclaw-card">
+                    <div class="house-icon">🦅</div>
+                    <h3 class="house-name" style="color: var(--ravenclaw)">Ravenclaw</h3>
+                    <p><strong>Traits:</strong> Intelligence, Wisdom, Wit</p>
+                    <p><strong>Founder:</strong> Rowena Ravenclaw</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="container">
+        <h2 class="section-title">Main Characters</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="character-card">
+                    <div class="character-initial">HP</div>
+                    <h4>Harry Potter</h4>
+                    <p>The Boy Who Lived</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="character-card">
+                    <div class="character-initial">HG</div>
+                    <h4>Hermione Granger</h4>
+                    <p>The Brightest Witch</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="character-card">
+                    <div class="character-initial">RW</div>
+                    <h4>Ron Weasley</h4>
+                    <p>Loyal Friend</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="character-card">
+                    <div class="character-initial">AD</div>
+                    <h4>Albus Dumbledore</h4>
+                    <p>Headmaster</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="character-card">
+                    <div class="character-initial">SS</div>
+                    <h4>Severus Snape</h4>
+                    <p>Potions Master</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="character-card">
+                    <div class="character-initial">LV</div>
+                    <h4>Lord Voldemort</h4>
+                    <p>Dark Lord</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About the Series</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="book-card">
+                    <p class="lead">Harry Potter is a series of seven fantasy novels written by British author J.K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.</p>
+                    <p>The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic, and subjugate all wizards and Muggles.</p>
+                    <p>Since the release of the first novel, the books have found immense popularity, critical acclaim, and commercial success worldwide. The series has been translated into 80 languages and has sold over 500 million copies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">⚡ The Wizarding World of Harry Potter ⚡</p>
+            <p class="mb-0">Mischief Managed</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Gallery - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-white/10 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white text-3xl font-bold">
+                    📸 PhotoGallery
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-pink-200 transition duration-300 font-medium">Home</a>
+                    <a href="#gallery" class="text-white hover:text-pink-200 transition duration-300 font-medium">Gallery</a>
+                    <a href="#about" class="text-white hover:text-pink-200 transition duration-300 font-medium">About</a>
+                    <a href="#contact" class="text-white hover:text-pink-200 transition duration-300 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="container mx-auto px-6 py-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fadeInUp">
+            Welcome to Our Gallery
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-8 animate-fadeInUp max-w-2xl mx-auto">
+            Discover breathtaking landscapes and stunning photography from around the world
+        </p>
+        <a href="#gallery" class="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-pink-100 transform hover:scale-105 transition duration-300 shadow-2xl">
+            Explore Gallery
+        </a>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="container mx-auto px-6 py-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+            Featured Photos
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Image 1 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" 
+                     alt="Mountain landscape" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Mountain Peaks</h3>
+                        <p class="text-sm text-white/80">Majestic heights</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop" 
+                     alt="Forest path" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Forest Trail</h3>
+                        <p class="text-sm text-white/80">Into the woods</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop" 
+                     alt="Desert sunset" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Desert Dreams</h3>
+                        <p class="text-sm text-white/80">Golden sands</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 4 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1511576661531-b34d7da5d0bb?w=800&h=600&fit=crop" 
+                     alt="Ocean waves" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Ocean View</h3>
+                        <p class="text-sm text-white/80">Endless blue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 5 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop" 
+                     alt="Foggy landscape" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Misty Valley</h3>
+                        <p class="text-sm text-white/80">Ethereal beauty</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 6 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&h=600&fit=crop" 
+                     alt="Rocky mountains" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Rocky Heights</h3>
+                        <p class="text-sm text-white/80">Rugged terrain</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 7 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&h=600&fit=crop" 
+                     alt="Green hills" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Green Hills</h3>
+                        <p class="text-sm text-white/80">Rolling meadows</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 8 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop" 
+                     alt="Beach paradise" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Beach Paradise</h3>
+                        <p class="text-sm text-white/80">Tropical escape</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 9 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop" 
+                     alt="Snow peaks" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Snow Peaks</h3>
+                        <p class="text-sm text-white/80">Winter wonderland</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 10 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop" 
+                     alt="Dense forest" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Dense Woods</h3>
+                        <p class="text-sm text-white/80">Nature's sanctuary</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 11 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&h=600&fit=crop" 
+                     alt="Sunrise view" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Golden Sunrise</h3>
+                        <p class="text-sm text-white/80">Dawn's first light</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 12 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop" 
+                     alt="River flow" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">River Flow</h3>
+                        <p class="text-sm text-white/80">Peaceful waters</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 13 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=600&fit=crop" 
+                     alt="Canyon view" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Canyon Vista</h3>
+                        <p class="text-sm text-white/80">Deep gorges</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 14 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=600&fit=crop" 
+                     alt="Lakeside" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Lakeside</h3>
+                        <p class="text-sm text-white/80">Tranquil shores</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 15 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=600&fit=crop" 
+                     alt="Wildflowers" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Wild Blooms</h3>
+                        <p class="text-sm text-white/80">Colorful fields</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 16 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?w=800&h=600&fit=crop" 
+                     alt="Tropical beach" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Tropical Shore</h3>
+                        <p class="text-sm text-white/80">Island paradise</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 17 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&h=600&fit=crop" 
+                     alt="Mountain lake" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Alpine Lake</h3>
+                        <p class="text-sm text-white/80">Crystal waters</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 18 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=800&h=600&fit=crop" 
+                     alt="Waterfall" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Waterfall</h3>
+                        <p class="text-sm text-white/80">Cascading beauty</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 19 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop" 
+                     alt="Autumn scenery" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Autumn Colors</h3>
+                        <p class="text-sm text-white/80">Fall splendor</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image 20 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&h=600&fit=crop" 
+                     alt="Starry night" 
+                     class="w-full h-72 object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-6">
+                    <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <h3 class="text-xl font-bold mb-1">Starry Night</h3>
+                        <p class="text-sm text-white/80">Celestial wonder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-6 py-16">
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-12 shadow-2xl">
+            <h2 class="text-4xl font-bold text-white text-center mb-8">About Our Gallery</h2>
+            <p class="text-white/90 text-lg text-center max-w-3xl mx-auto leading-relaxed">
+                We showcase the world's most stunning photography, capturing the beauty of nature from majestic mountains to serene beaches. Each image tells a story and invites you to explore the wonders of our planet.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-6 py-16">
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-12 shadow-2xl max-w-2xl mx-auto">
+            <h2 class="text-4xl font-bold text-white text-center mb-8">Get In Touch</h2>
+            <form class="space-y-6">
+                <div>
+                    <input type="text" placeholder="Your Name" class="w-full px-6 py-4 rounded-xl bg-white/20 backdrop-blur-md text-white placeholder-white/60 border border-white/30 focus:outline-none focus:ring-2 focus:ring-pink-400 transition duration-300">
+                </div>
+                <div>
+                    <input type="email" placeholder="Your Email" class="w-full px-6 py-4 rounded-xl bg-white/20 backdrop-blur-md text-white placeholder-white/60 border border-white/30 focus:outline-none focus:ring-2 focus:ring-pink-400 transition duration-300">
+                </div>
+                <div>
+                    <textarea placeholder="Your Message" rows="4" class="w-full px-6 py-4 rounded-xl bg-white/20 backdrop-blur-md text-white placeholder-white/60 border border-white/30 focus:outline-none focus:ring-2 focus:ring-pink-400 transition duration-300"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-white text-purple-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-pink-100 transform hover:scale-105 transition duration-300 shadow-xl">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 backdrop-blur-md py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-white/80">© 2024 PhotoGallery. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-white/60 hover:text-white transition duration-300">Facebook</a>
+                <a href="#" class="text-white/60 hover:text-white transition duration-300">Instagram</a>
+                <a href="#" class="text-white/60 hover:text-white transition duration-300">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
